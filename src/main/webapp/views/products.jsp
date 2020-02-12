@@ -22,53 +22,42 @@
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="#" onclick="alert('Добавить!')"> Добавить </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#" onclick="alert('Изменить')"> Изменить </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link"  onclick="document.getElementById('form_delete').submit(validateDelete('delete'))" >Удалить</a>
-            </li>
-        </ul>
+<%--        <ul class="navbar-nav mr-auto">--%>
+<%--            <li class="nav-item">--%>
+<%--                <a class="nav-link" href="#" onclick="alert('Добавить!')"> Добавить </a>--%>
+<%--            </li>--%>
+<%--            <li class="nav-item">--%>
+<%--                <a class="nav-link" href="#" onclick="alert('Изменить')"> Изменить </a>--%>
+<%--            </li>--%>
+<%--            <li class="nav-item">--%>
+<%--                <a class="nav-link"  onclick="document.getElementById('form_delete').submit(validateDelete('delete'))" >Удалить</a>--%>
+<%--            </li>--%>
+<%--        </ul>--%>
     </div>
 </nav>
 
-<c:if test="${!partners.isEmpty()}">
+<c:if test="${!products.isEmpty()}">
     <div class="container text-center" style="margin-top: 3%">
-        <h2 style="text-align: left; margin-bottom: 2%;color: #343a40"> Контрагенты </h2>
+        <h2 style="text-align: left; margin-bottom: 2%;color: #343a40"> Товары </h2>
         <table class="table table-hover shadow" >
-            <caption> записей в базе данных ${partners.size()}</caption>
+            <caption> записей в базе данных ${products.size()}</caption>
             <thead class="thead-dark">
             <tr>
-                <th> Наименование организвции </th>
-                <th> Директор </th>
-                <th> Адрес </th>
-                <th> Телефон </th>
-                <th> email </th>
-                <th> ИНН </th>
-                <th> ОГРН </th>
+                <th> Наименование </th>
+
             </tr>
             </thead>
             <tbody>
-            <c:forEach var="partner" items="${partners}">
+            <c:forEach var="product" items="${products}">
                 <tr onclick="selectRow(this)" id="${partner.getId()}">
-                    <td>${partner.getNameOrganisation()}</td>
-                    <td>${partner.getNameDirector()}</td>
-                    <td>${partner.getAddress()}</td>
-                    <td>${partner.getPhone()}</td>
-                    <td>${partner.getEmail()}</td>
-                    <td>${partner.getINN()}</td>
-                    <td>${partner.getOGRN()}</td>
+                    <td>${product.getName()}</td>
                 </tr>
             </c:forEach>
             </tbody>
         </table>
     </div>
 </c:if>
-<c:if test="${partners.isEmpty()}">
+<c:if test="${products.isEmpty()}">
     <div class="container text-center" style="margin-top: 5%"  >
         <h2 style="font-family: sans-serif; color: #999999;"> Здесь ничего нет </h2>
         <img src="/images/homePage.png">

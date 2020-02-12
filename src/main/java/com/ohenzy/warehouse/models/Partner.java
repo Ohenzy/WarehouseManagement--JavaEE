@@ -11,8 +11,18 @@ public class Partner {
     private String INN;
     private String OGRN;
 
-    public Partner(String nameOrganization, String nameDirector, String address, String phone, String email, String INN, String OGRN) {
+    public Partner(int id, String nameOrganization, String nameDirector, String address, String phone, String email, String INN, String OGRN) {
+        this.id = id;
+        this.nameOrganization = nameOrganization;
+        this.nameDirector = nameDirector;
+        this.address = address;
+        this.phone = phone;
+        this.email = email;
+        this.INN = INN;
+        this.OGRN = OGRN;
+    }
 
+    public Partner(String nameOrganization, String nameDirector, String address, String phone, String email, String INN, String OGRN) {
         this.nameOrganization = nameOrganization;
         this.nameDirector = nameDirector;
         this.address = address;
@@ -24,10 +34,6 @@ public class Partner {
 
     public int getId() {
         return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getNameOrganisation() {

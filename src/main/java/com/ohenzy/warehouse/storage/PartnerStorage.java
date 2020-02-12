@@ -14,12 +14,9 @@ public class PartnerStorage  {
 
     public static void main(String[] args) {
         PartnerStorage storage = new PartnerStorage();
-        storage.save(new Partner("asd","asd","asd","asd","asd","asd","asd"));
-        for (Partner partner : storage.findAll()){
-            System.out.println(partner.getNameDirector());
-
+        for(int i = 0; i<10; i++) {
+            storage.save(new Partner("OOO AAA", "Ohenzy", "none", "none", "none", "654654", "847324"));
         }
-
     }
 
     public PartnerStorage() {
@@ -35,25 +32,26 @@ public class PartnerStorage  {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
     }
 
-
-    public boolean deleteById(int id) {
-        if(!existsById(id))
+    public boolean deleteById(String id_delete) {
+        if(id_delete.equals(""))
             return false;
         else {
-            try (PreparedStatement statement = connection.prepareStatement("delete from partners where id = (?)")){
-                statement.setInt(1,id);
-                statement.executeUpdate();
-            } catch (SQLException e) {
-                e.printStackTrace();
+            int id = Integer.parseInt(id_delete);
+            if (!existsById(id))
+                return false;
+            else {
+                try (PreparedStatement statement = connection.prepareStatement("delete from partners where id = (?)")) {
+                    statement.setInt(1, id);
+                    statement.executeUpdate();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+                return true;
             }
-            return true;
         }
-
     }
-
 
     public void save(Partner partner) {
         existsById(partner.getId());
@@ -77,7 +75,7 @@ public class PartnerStorage  {
             statement.setInt(1, id);
             ResultSet result = statement.executeQuery();
             while (result.next())
-                partner = new Partner(result.getString("name_organisation"), result.getString("name_director"),
+                partner = new Partner(result.getInt("id"), result.getString("name_organisation"), result.getString("name_director"),
                         result.getString("address"), result.getString("phone"), result.getString("email"), result.getString("INN"),
                         result.getString("OGRN"));
 
@@ -102,12 +100,12 @@ public class PartnerStorage  {
 
     public List<Partner> findAll() {
         final List<Partner> partners = new ArrayList();
-        try (ResultSet result = connection.createStatement().executeQuery("select * from partners ")){
+        try (ResultSet result = connection.createStatement().executeQuery("select * from partners")){
             while (result.next()) {
-                partners.add(new Partner(result.getString("name_organisation"), result.getString("name_director"),
+                partners.add(new Partner(result.getInt("id"), result.getString("name_organisation"), result.getString("name_director"),
                         result.getString("address"), result.getString("phone"), result.getString("email"), result.getString("INN"),
                         result.getString("OGRN")));
-                ;
+
             }
 
         } catch (SQLException e) {

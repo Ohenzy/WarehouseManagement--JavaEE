@@ -6,7 +6,49 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9b46113c-3208-4a15-9a38-ceecb007d5c3" name="Default Changelist" comment="" />
+    <list default="true" id="9b46113c-3208-4a15-9a38-ceecb007d5c3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ohenzy/warehouse/servlets/ProductsServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/handbook_events.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/views/products.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ohenzy/warehouse/models/Partner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ohenzy/warehouse/models/Partner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ohenzy/warehouse/servlets/PartnersServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ohenzy/warehouse/servlets/PartnersServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ohenzy/warehouse/storage/PartnerStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ohenzy/warehouse/storage/PartnerStorage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/images/emptyPage.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/images/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/images/logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/images/logo_02.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/main-page.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/main-page.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/partners.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/partners.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/warehouse-JavaEE.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ohenzy/warehouse/models/Partner.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ohenzy/warehouse/models/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ohenzy/warehouse/servlets/MainPageServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ohenzy/warehouse/servlets/PartnersServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ohenzy/warehouse/storage/PartnerStorage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ohenzy/warehouse/storage/settings/Settings.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mysql.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/warehouse-JavaEE-1.0-SNAPSHOT/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/warehouse-JavaEE-1.0-SNAPSHOT/WEB-INF/classes/META-INF/warehouse-JavaEE.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/warehouse-JavaEE-1.0-SNAPSHOT/WEB-INF/classes/com/ohenzy/warehouse/models/Partner.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/warehouse-JavaEE-1.0-SNAPSHOT/WEB-INF/classes/com/ohenzy/warehouse/models/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/warehouse-JavaEE-1.0-SNAPSHOT/WEB-INF/classes/com/ohenzy/warehouse/servlets/MainPageServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/warehouse-JavaEE-1.0-SNAPSHOT/WEB-INF/classes/com/ohenzy/warehouse/servlets/PartnersServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/warehouse-JavaEE-1.0-SNAPSHOT/WEB-INF/classes/com/ohenzy/warehouse/storage/PartnerStorage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/warehouse-JavaEE-1.0-SNAPSHOT/WEB-INF/classes/com/ohenzy/warehouse/storage/Storage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/warehouse-JavaEE-1.0-SNAPSHOT/WEB-INF/classes/com/ohenzy/warehouse/storage/settings/Settings.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/warehouse-JavaEE-1.0-SNAPSHOT/WEB-INF/classes/mysql.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/warehouse-JavaEE-1.0-SNAPSHOT/WEB-INF/lib/javax.servlet-api-4.0.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/warehouse-JavaEE-1.0-SNAPSHOT/WEB-INF/lib/jstl-1.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/warehouse-JavaEE-1.0-SNAPSHOT/WEB-INF/lib/mysql-connector-java-8.0.19.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/warehouse-JavaEE-1.0-SNAPSHOT/WEB-INF/lib/protobuf-java-3.6.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/warehouse-JavaEE-1.0-SNAPSHOT/WEB-INF/lib/standard-1.1.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/warehouse-JavaEE-1.0-SNAPSHOT/images/emptyPage.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/warehouse-JavaEE-1.0-SNAPSHOT/images/homePage.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/warehouse-JavaEE-1.0-SNAPSHOT/images/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/warehouse-JavaEE-1.0-SNAPSHOT/images/logo_02.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/warehouse-JavaEE-1.0-SNAPSHOT/views/main-page.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/warehouse-JavaEE-1.0-SNAPSHOT/views/partners.jsp" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -39,13 +81,6 @@
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="storagesql: schema" type="76f4a085:MysqlImplModel$Schema" />
       </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="jdbc:mysql://127.0.0.1:3306/storagesql?serverTimezone=Europe/Moscow&amp;useSSL=false" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="storagesql: schema" type="76f4a085:MysqlImplModel$Schema" />
-        <item name="partners: table" type="285a2a93:MysqlImplModel$Table" />
-      </path>
     </expand>
     <select />
   </component>
@@ -54,6 +89,7 @@
       <list>
         <option value="jsf" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
         <option value="Jsp File" />
         <option value="Class" />
       </list>
@@ -93,6 +129,7 @@
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.18390805" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -105,7 +142,7 @@
       <recent name="C:\Users\Ohenzy\IdeaProjects\warehouse-JavaEE\src\main\webapp\image" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.PartnerStorage">
+  <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.30">
     <configuration name="PartnerStorage" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.ohenzy.warehouse.storage.PartnerStorage" />
       <module name="warehouse-JavaEE" />
@@ -120,6 +157,8 @@
       </method>
     </configuration>
     <configuration name="Tomcat 9.0.30" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.30" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+      <option name="SHOW_DIALOG_ON_UPDATE" value="false" />
+      <option name="UPDATING_POLICY" value="redeploy-artifacts" />
       <deployment>
         <artifact name="warehouse-JavaEE:war exploded">
           <settings>
@@ -204,12 +243,26 @@
     <option name="viewStates">
       <list>
         <serviceView>
-          <option name="contentProportion" value="0.16558442" />
+          <option name="contentProportion" value="0.11038961" />
           <treeState>
             <expand>
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
                 <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="Finished" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="root:jdbc:mysql://127.0.0.1:3306/storagesql?serverTimezone=Europe/Moscow&amp;useSSL=false" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="root:jdbc:mysql://127.0.0.1:3306/storagesql?serverTimezone=Europe/Moscow&amp;useSSL=false" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="com.intellij.database.console.session.MessageBusSession@19acb143" type="9fbbdea:ServiceModel$ServiceNode" />
               </path>
             </expand>
             <select />
@@ -232,6 +285,7 @@
       <workItem from="1581049225049" duration="21892000" />
       <workItem from="1581171048870" duration="23271000" />
       <workItem from="1581324664421" duration="1715000" />
+      <workItem from="1581492684737" duration="18597000" />
     </task>
     <servers />
   </component>
@@ -247,77 +301,77 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="179" key="#SQL_Dialects/0.0.1920.1040@0.0.1920.1040" timestamp="1581218628204" />
-    <state x="705" y="145" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1581235941678">
+    <state x="705" y="145" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1581503428708">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="705" y="145" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1581235941678" />
-    <state x="765" y="230" key="#com.intellij.ide.util.MemberChooser" timestamp="1581220924514">
+    <state x="705" y="145" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1581503428708" />
+    <state x="765" y="230" key="#com.intellij.ide.util.MemberChooser" timestamp="1581517752856">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="765" y="230" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1581220924514" />
+    <state x="765" y="230" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1581517752856" />
     <state x="690" y="268" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1581076143767">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="268" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1581076143767" />
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1581218626993">
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1581493914707">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1581218626993" />
-    <state width="1877" height="280" key="GridCell.Tab.0.bottom" timestamp="1581338615412">
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1581493914707" />
+    <state width="1877" height="340" key="GridCell.Tab.0.bottom" timestamp="1581517926406">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="280" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1581338615412" />
-    <state width="1877" height="280" key="GridCell.Tab.0.center" timestamp="1581338615412">
+    <state width="1877" height="340" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1581517926406" />
+    <state width="1877" height="340" key="GridCell.Tab.0.center" timestamp="1581517926406">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="280" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1581338615412" />
-    <state width="1877" height="280" key="GridCell.Tab.0.left" timestamp="1581338615412">
+    <state width="1877" height="340" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1581517926406" />
+    <state width="1877" height="340" key="GridCell.Tab.0.left" timestamp="1581517926405">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="280" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1581338615412" />
-    <state width="1877" height="280" key="GridCell.Tab.0.right" timestamp="1581338615412">
+    <state width="1877" height="340" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1581517926405" />
+    <state width="1877" height="340" key="GridCell.Tab.0.right" timestamp="1581517926406">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="280" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1581338615412" />
-    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1581269136115">
+    <state width="1877" height="340" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1581517926406" />
+    <state width="1643" height="210" key="GridCell.Tab.1.bottom" timestamp="1581517926403">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1581269136115" />
-    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1581269136115">
+    <state width="1643" height="210" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1581517926403" />
+    <state width="1643" height="210" key="GridCell.Tab.1.center" timestamp="1581517926403">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1581269136115" />
-    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1581269136115">
+    <state width="1643" height="210" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1581517926403" />
+    <state width="1643" height="210" key="GridCell.Tab.1.left" timestamp="1581517926403">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1581269136115" />
-    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1581269136115">
+    <state width="1643" height="210" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1581517926403" />
+    <state width="1643" height="210" key="GridCell.Tab.1.right" timestamp="1581517926403">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1581269136115" />
-    <state width="1541" height="264" key="GridCell.Tab.2.bottom" timestamp="1581269136107">
+    <state width="1643" height="210" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1581517926403" />
+    <state width="1643" height="210" key="GridCell.Tab.2.bottom" timestamp="1581517926404">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1541" height="264" key="GridCell.Tab.2.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1581269136107" />
-    <state width="1541" height="264" key="GridCell.Tab.2.center" timestamp="1581269136106">
+    <state width="1643" height="210" key="GridCell.Tab.2.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1581517926404" />
+    <state width="1643" height="210" key="GridCell.Tab.2.center" timestamp="1581517926404">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1541" height="264" key="GridCell.Tab.2.center/0.0.1920.1040@0.0.1920.1040" timestamp="1581269136106" />
-    <state width="1541" height="264" key="GridCell.Tab.2.left" timestamp="1581269136106">
+    <state width="1643" height="210" key="GridCell.Tab.2.center/0.0.1920.1040@0.0.1920.1040" timestamp="1581517926404" />
+    <state width="1643" height="210" key="GridCell.Tab.2.left" timestamp="1581517926404">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1541" height="264" key="GridCell.Tab.2.left/0.0.1920.1040@0.0.1920.1040" timestamp="1581269136106" />
-    <state width="1541" height="264" key="GridCell.Tab.2.right" timestamp="1581269136107">
+    <state width="1643" height="210" key="GridCell.Tab.2.left/0.0.1920.1040@0.0.1920.1040" timestamp="1581517926404" />
+    <state width="1643" height="210" key="GridCell.Tab.2.right" timestamp="1581517926404">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1541" height="264" key="GridCell.Tab.2.right/0.0.1920.1040@0.0.1920.1040" timestamp="1581269136106" />
+    <state width="1643" height="210" key="GridCell.Tab.2.right/0.0.1920.1040@0.0.1920.1040" timestamp="1581517926404" />
     <state width="196" height="457" key="HiddenNamespacesPopup" timestamp="1581235878657">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="196" height="457" key="HiddenNamespacesPopup/0.0.1920.1040@0.0.1920.1040" timestamp="1581235878657" />
-    <state x="440" y="95" key="SettingsEditor" timestamp="1581175208124">
+    <state x="440" y="95" key="SettingsEditor" timestamp="1581493928886">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="440" y="95" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1581175208124" />
+    <state x="440" y="95" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1581493928886" />
   </component>
 </project>

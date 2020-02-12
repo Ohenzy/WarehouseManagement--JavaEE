@@ -7,7 +7,7 @@
 </head>
 <body class="bg-light" >
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow "  >
-    <a class="navbar-brand" href="#"> <img src="/images/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">  Упраление складом </a>
+    <a class="navbar-brand" href="/"> <img src="/images/logo.png" width="30" height="30" class="d-inline-block align-top" style="margin-right: 10px">  Управление складом </a>
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -21,7 +21,7 @@
                 <div class="dropdown-menu bg-dark " aria-labelledby="navbarDropdown">
                     <a class="dropdown-item text-white bg-dark" href="${pageContext.request.contextPath}/partners">Контрагент</a>
                     <a class="dropdown-item text-white bg-dark" href="#">Склад</a>
-                    <a class="dropdown-item text-white bg-dark" href="#">Товар</a>
+                    <a class="dropdown-item text-white bg-dark" href="${pageContext.request.contextPath}/products">Товар</a>
                     <a class="dropdown-item text-white bg-dark" href="#">Еденица измерения</a>
                 </div>
             </li>
