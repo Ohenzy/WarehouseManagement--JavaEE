@@ -12,33 +12,24 @@ public class PartnerStorage  {
 
     private Connection connection;
 
-    public static void main(String[] args) {
-        PartnerStorage storage = new PartnerStorage();
-        for(int i = 0; i<10; i++) {
-            storage.save(new Partner("OOO AAA", "Ohenzy", "none", "none", "none", "654654", "847324"));
-        }
-    }
-
     public PartnerStorage() {
         Settings settings = Settings.getInstance();
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-        try {
             connection = DriverManager.getConnection(settings.getValues("url"), settings.getValues("username"), settings.getValues("password"));
             createTable();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
 
-    public boolean deleteById(String id_delete) {
-        if(id_delete.equals(""))
+    public boolean deleteById(String deleteId) {
+        if(deleteId.equals(""))
             return false;
         else {
-            int id = Integer.parseInt(id_delete);
+            int id = Integer.parseInt(deleteId);
             if (!existsById(id))
                 return false;
             else {
@@ -74,6 +65,7 @@ public class PartnerStorage  {
         try (PreparedStatement statement = connection.prepareStatement("select * from partners where id = (?)")){
             statement.setInt(1, id);
             ResultSet result = statement.executeQuery();
+
             while (result.next())
                 partner = new Partner(result.getInt("id"), result.getString("name_organisation"), result.getString("name_director"),
                         result.getString("address"), result.getString("phone"), result.getString("email"), result.getString("INN"),
@@ -89,9 +81,7 @@ public class PartnerStorage  {
         boolean exists = false;
         try (PreparedStatement statement = connection.prepareStatement("select * from partners where id = (?)")){
             statement.setInt(1, id);
-            ResultSet result = statement.executeQuery();
-            exists = result.next();
-
+            exists = statement.executeQuery().next();
         } catch (SQLException e) {
             e.printStackTrace();
         }
