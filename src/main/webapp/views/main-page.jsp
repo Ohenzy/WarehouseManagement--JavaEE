@@ -20,9 +20,8 @@
                 </a>
                 <div class="dropdown-menu bg-dark " aria-labelledby="navbarDropdown">
                     <a class="dropdown-item text-white bg-dark" href="${pageContext.request.contextPath}/partners">Контрагент</a>
-                    <a class="dropdown-item text-white bg-dark" href="#">Склад</a>
+                    <a class="dropdown-item text-white bg-dark" href="${pageContext.request.contextPath}/warehouse">Склад</a>
                     <a class="dropdown-item text-white bg-dark" href="${pageContext.request.contextPath}/products">Товар</a>
-                    <a class="dropdown-item text-white bg-dark" href="#">Еденица измерения</a>
                 </div>
             </li>
             <li class="nav-item dropdown">

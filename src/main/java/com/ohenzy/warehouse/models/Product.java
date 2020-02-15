@@ -5,14 +5,18 @@ public class Product {
     private int id;
     private String name;
     private int quantity;
-    private int unit;
+    private String unit;
 
 
-    public Product(int id, String name, int quantity, int unit) {
-        this.id = id;
+    public Product(String name, int quantity, String unit) {
         this.name = name;
         this.quantity = quantity;
         this.unit = unit;
+    }
+
+    public Product(int id, String name, int quantity, String unit) {
+        this(name,quantity,unit);
+        this.id = id;
     }
 
     public int getId() {
@@ -27,7 +31,7 @@ public class Product {
         return quantity;
     }
 
-    public int getUnit() {
+    public String getUnit() {
         return unit;
     }
 }

@@ -7,14 +7,37 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9b46113c-3208-4a15-9a38-ceecb007d5c3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ohenzy/warehouse/models/Product.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ohenzy/warehouse/models/Unit.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ohenzy/warehouse/storage/ProductStorage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ohenzy/warehouse/storage/UnitStorage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/0a04ab3d-bf5a-493f-9702-98063cf6e130.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/0a04ab3d-bf5a-493f-9702-98063cf6e130.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ohenzy/warehouse/models/Warehouse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ohenzy/warehouse/servlets/WarehouseServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ohenzy/warehouse/storage/WarehouseStorage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/views/warehouse.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ohenzy/warehouse/models/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ohenzy/warehouse/models/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ohenzy/warehouse/models/Unit.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ohenzy/warehouse/servlets/ProductsServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ohenzy/warehouse/servlets/ProductsServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ohenzy/warehouse/storage/PartnerStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ohenzy/warehouse/storage/PartnerStorage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ohenzy/warehouse/storage/ProductStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ohenzy/warehouse/storage/ProductStorage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ohenzy/warehouse/storage/UnitStorage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ohenzy/warehouse/storage/settings/Settings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ohenzy/warehouse/storage/settings/Connector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/handbook_events.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/events.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/main-page.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/main-page.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/partners.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/partners.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/products.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/products.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ohenzy/warehouse/models/Product.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ohenzy/warehouse/models/Product.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ohenzy/warehouse/models/Unit.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ohenzy/warehouse/servlets/ProductsServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ohenzy/warehouse/servlets/ProductsServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ohenzy/warehouse/storage/PartnerStorage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ohenzy/warehouse/storage/PartnerStorage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ohenzy/warehouse/storage/ProductStorage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ohenzy/warehouse/storage/ProductStorage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ohenzy/warehouse/storage/UnitStorage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ohenzy/warehouse/storage/settings/Settings.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/warehouse-JavaEE-1.0-SNAPSHOT/WEB-INF/classes/com/ohenzy/warehouse/servlets/ProductsServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/warehouse-JavaEE-1.0-SNAPSHOT/WEB-INF/classes/com/ohenzy/warehouse/servlets/ProductsServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/warehouse-JavaEE-1.0-SNAPSHOT/WEB-INF/classes/com/ohenzy/warehouse/storage/PartnerStorage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/warehouse-JavaEE-1.0-SNAPSHOT/WEB-INF/classes/com/ohenzy/warehouse/storage/PartnerStorage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/warehouse-JavaEE-1.0-SNAPSHOT/WEB-INF/classes/com/ohenzy/warehouse/storage/settings/Settings.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/warehouse-JavaEE-1.0-SNAPSHOT/js/handbook_events.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/warehouse-JavaEE-1.0-SNAPSHOT/views/main-page.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/warehouse-JavaEE-1.0-SNAPSHOT/views/main-page.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/warehouse-JavaEE-1.0-SNAPSHOT/views/partners.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/warehouse-JavaEE-1.0-SNAPSHOT/views/partners.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/warehouse-JavaEE-1.0-SNAPSHOT/views/products.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/warehouse-JavaEE-1.0-SNAPSHOT/views/products.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +92,9 @@
     </option>
   </component>
   <component name="ProjectId" id="1XRaoyEhqaKrER8usVvEOPRZ4WV" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -78,11 +103,12 @@
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp/images" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Global Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.18390805" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
@@ -98,7 +124,20 @@
       <recent name="C:\Users\Ohenzy\IdeaProjects\warehouse-JavaEE\src\main\webapp\image" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.30">
+    <configuration name="PartnerStorage" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.ohenzy.warehouse.storage.PartnerStorage" />
+      <module name="warehouse-JavaEE" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ohenzy.warehouse.storage.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Tomcat 9.0.30" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.30" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="SHOW_DIALOG_ON_UPDATE" value="false" />
       <option name="UPDATING_POLICY" value="redeploy-artifacts" />
@@ -172,6 +211,15 @@
         </option>
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Tomcat Server.Tomcat 9.0.30" />
+      <item itemvalue="Application.PartnerStorage" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.PartnerStorage" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -186,7 +234,8 @@
               </path>
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="root:jdbc:mysql://127.0.0.1:3306/storagesql?serverTimezone=Europe/Moscow&amp;useSSL=false" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="Running" type="7427dc5b:ServiceModel$ServiceGroupNode" />
               </path>
             </expand>
             <select />
@@ -211,7 +260,8 @@
       <workItem from="1581324664421" duration="1715000" />
       <workItem from="1581492684737" duration="18597000" />
       <workItem from="1581534630725" duration="39000" />
-      <workItem from="1581590601325" duration="10235000" />
+      <workItem from="1581590601325" duration="10248000" />
+      <workItem from="1581670907236" duration="28874000" />
     </task>
     <servers />
   </component>
@@ -227,77 +277,81 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="179" key="#SQL_Dialects/0.0.1920.1040@0.0.1920.1040" timestamp="1581218628204" />
-    <state x="705" y="145" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1581619406255">
+    <state x="705" y="145" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1581675896963">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="705" y="145" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1581619406255" />
-    <state x="765" y="230" key="#com.intellij.ide.util.MemberChooser" timestamp="1581603613253">
+    <state x="705" y="145" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1581675896963" />
+    <state x="765" y="230" key="#com.intellij.ide.util.MemberChooser" timestamp="1581721018018">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="765" y="230" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1581603613253" />
-    <state x="690" y="268" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1581076143767">
+    <state x="765" y="230" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1581721018018" />
+    <state x="140" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1581677536435">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="690" y="268" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1581076143767" />
+    <state x="140" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1581677536435" />
+    <state x="690" y="268" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1581671243002">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="690" y="268" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1581671243002" />
     <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1581493914707">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1581493914707" />
-    <state width="1877" height="238" key="GridCell.Tab.0.bottom" timestamp="1581619637007">
+    <state width="1643" height="278" key="GridCell.Tab.0.bottom" timestamp="1581750648287">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="238" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1581619637007" />
-    <state width="1877" height="238" key="GridCell.Tab.0.center" timestamp="1581619637007">
+    <state width="1643" height="278" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1581750648287" />
+    <state width="1643" height="278" key="GridCell.Tab.0.center" timestamp="1581750648287">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="238" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1581619637007" />
-    <state width="1877" height="238" key="GridCell.Tab.0.left" timestamp="1581619637007">
+    <state width="1643" height="278" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1581750648287" />
+    <state width="1643" height="278" key="GridCell.Tab.0.left" timestamp="1581750648287">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="238" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1581619637007" />
-    <state width="1877" height="238" key="GridCell.Tab.0.right" timestamp="1581619637007">
+    <state width="1643" height="278" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1581750648287" />
+    <state width="1643" height="278" key="GridCell.Tab.0.right" timestamp="1581750648287">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="238" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1581619637007" />
-    <state width="1643" height="210" key="GridCell.Tab.1.bottom" timestamp="1581534668958">
+    <state width="1643" height="278" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1581750648287" />
+    <state width="1643" height="278" key="GridCell.Tab.1.bottom" timestamp="1581750648288">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1643" height="210" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1581534668958" />
-    <state width="1643" height="210" key="GridCell.Tab.1.center" timestamp="1581534668958">
+    <state width="1643" height="278" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1581750648288" />
+    <state width="1643" height="278" key="GridCell.Tab.1.center" timestamp="1581750648287">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1643" height="210" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1581534668958" />
-    <state width="1643" height="210" key="GridCell.Tab.1.left" timestamp="1581534668958">
+    <state width="1643" height="278" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1581750648287" />
+    <state width="1643" height="278" key="GridCell.Tab.1.left" timestamp="1581750648287">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1643" height="210" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1581534668958" />
-    <state width="1643" height="210" key="GridCell.Tab.1.right" timestamp="1581534668958">
+    <state width="1643" height="278" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1581750648287" />
+    <state width="1643" height="278" key="GridCell.Tab.1.right" timestamp="1581750648288">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1643" height="210" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1581534668958" />
-    <state width="1643" height="210" key="GridCell.Tab.2.bottom" timestamp="1581534668958">
+    <state width="1643" height="278" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1581750648288" />
+    <state width="1643" height="278" key="GridCell.Tab.2.bottom" timestamp="1581750648288">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1643" height="210" key="GridCell.Tab.2.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1581534668958" />
-    <state width="1643" height="210" key="GridCell.Tab.2.center" timestamp="1581534668958">
+    <state width="1643" height="278" key="GridCell.Tab.2.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1581750648288" />
+    <state width="1643" height="278" key="GridCell.Tab.2.center" timestamp="1581750648288">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1643" height="210" key="GridCell.Tab.2.center/0.0.1920.1040@0.0.1920.1040" timestamp="1581534668958" />
-    <state width="1643" height="210" key="GridCell.Tab.2.left" timestamp="1581534668958">
+    <state width="1643" height="278" key="GridCell.Tab.2.center/0.0.1920.1040@0.0.1920.1040" timestamp="1581750648288" />
+    <state width="1643" height="278" key="GridCell.Tab.2.left" timestamp="1581750648288">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1643" height="210" key="GridCell.Tab.2.left/0.0.1920.1040@0.0.1920.1040" timestamp="1581534668958" />
-    <state width="1643" height="210" key="GridCell.Tab.2.right" timestamp="1581534668958">
+    <state width="1643" height="278" key="GridCell.Tab.2.left/0.0.1920.1040@0.0.1920.1040" timestamp="1581750648288" />
+    <state width="1643" height="278" key="GridCell.Tab.2.right" timestamp="1581750648288">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1643" height="210" key="GridCell.Tab.2.right/0.0.1920.1040@0.0.1920.1040" timestamp="1581534668958" />
+    <state width="1643" height="278" key="GridCell.Tab.2.right/0.0.1920.1040@0.0.1920.1040" timestamp="1581750648288" />
     <state width="196" height="457" key="HiddenNamespacesPopup" timestamp="1581235878657">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="196" height="457" key="HiddenNamespacesPopup/0.0.1920.1040@0.0.1920.1040" timestamp="1581235878657" />
-    <state x="440" y="95" key="SettingsEditor" timestamp="1581493928886">
+    <state x="440" y="95" key="SettingsEditor" timestamp="1581721816781">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="440" y="95" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1581493928886" />
+    <state x="440" y="95" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1581721816781" />
   </component>
 </project>

@@ -1,28 +1,18 @@
 package com.ohenzy.warehouse.storage;
 
 import com.ohenzy.warehouse.models.Partner;
-import com.ohenzy.warehouse.storage.settings.Settings;
-
+import com.ohenzy.warehouse.storage.settings.Connector;
 import java.sql.*;
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class PartnerStorage  {
 
-    private Connection connection;
+    private Connector connector = Connector.getInstance();
+
 
     public PartnerStorage() {
-        Settings settings = Settings.getInstance();
-        try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            connection = DriverManager.getConnection(settings.getValues("url"), settings.getValues("username"), settings.getValues("password"));
-            createTable();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+       this.createTable();
     }
 
     public boolean deleteById(String deleteId) {
@@ -33,7 +23,7 @@ public class PartnerStorage  {
             if (!existsById(id))
                 return false;
             else {
-                try (PreparedStatement statement = connection.prepareStatement("delete from partners where id = (?)")) {
+                try (PreparedStatement statement = connector.getConnection().prepareStatement("delete from partners where id = (?)")) {
                     statement.setInt(1, id);
                     statement.executeUpdate();
                 } catch (SQLException e) {
@@ -46,7 +36,7 @@ public class PartnerStorage  {
 
     public void save(Partner partner) {
         existsById(partner.getId());
-        try (PreparedStatement statement = connection.prepareStatement("insert into partners (name_organisation, name_director, address, phone, email, INN, OGRN) values (?, ?, ?, ?, ?, ?, ?)")){
+        try (PreparedStatement statement = connector.getConnection().prepareStatement("insert into partners (name_organisation, name_director, address, phone, email, INN, OGRN) values (?, ?, ?, ?, ?, ?, ?)")){
             statement.setString(1,partner.getNameOrganisation());
             statement.setString(2,partner.getNameDirector());
             statement.setString(3,partner.getAddress());
@@ -62,7 +52,7 @@ public class PartnerStorage  {
 
     public Partner findById(int id) {
         Partner partner = null;
-        try (PreparedStatement statement = connection.prepareStatement("select * from partners where id = (?)")){
+        try (PreparedStatement statement = connector.getConnection().prepareStatement("select * from partners where id = (?)")){
             statement.setInt(1, id);
             ResultSet result = statement.executeQuery();
 
@@ -79,7 +69,7 @@ public class PartnerStorage  {
 
     public boolean existsById(int id) {
         boolean exists = false;
-        try (PreparedStatement statement = connection.prepareStatement("select * from partners where id = (?)")){
+        try (PreparedStatement statement = connector.getConnection().prepareStatement("select * from partners where id = (?)")){
             statement.setInt(1, id);
             exists = statement.executeQuery().next();
         } catch (SQLException e) {
@@ -90,7 +80,7 @@ public class PartnerStorage  {
 
     public List<Partner> findAll() {
         final List<Partner> partners = new ArrayList();
-        try (ResultSet result = connection.createStatement().executeQuery("select * from partners")){
+        try (ResultSet result = connector.getConnection().createStatement().executeQuery("select * from partners")){
             while (result.next()) {
                 partners.add(new Partner(result.getInt("id"), result.getString("name_organisation"), result.getString("name_director"),
                         result.getString("address"), result.getString("phone"), result.getString("email"), result.getString("INN"),
@@ -107,7 +97,7 @@ public class PartnerStorage  {
     private void createTable() {
         try {
             if( !tableExists() )
-                connection.createStatement().executeUpdate("create table partners ( id int not null auto_increment primary key, name_organisation varchar (50)," +
+                connector.getConnection().createStatement().executeUpdate("create table partners ( id int not null auto_increment primary key, name_organisation varchar (50)," +
                         " name_director varchar (50),address varchar(50), phone varchar(50)," +
                         "email varchar(50), INN varchar(50),  OGRN varchar(50));");
         } catch (SQLException e) {
@@ -117,7 +107,7 @@ public class PartnerStorage  {
 
     private boolean tableExists() throws SQLException{
         boolean tableExists = false;
-        ResultSet result = connection.createStatement().executeQuery("CHECK TABLE partners");
+        ResultSet result = connector.getConnection().createStatement().executeQuery("CHECK TABLE partners");
         while (result.next())
             if (result.getString("Msg_text").equals("OK"))
                 tableExists = true;
