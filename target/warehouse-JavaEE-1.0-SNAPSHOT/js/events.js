@@ -31,15 +31,14 @@ function swapForm() {
     if(document.getElementById("view_table").style.display === "block"){
         document.getElementById("view_table").style.display = "none";
         document.getElementById("view_form").style.display = "block";
-        document.getElementById("button_add").textContent = "Назад";
-        document.getElementById('button_edit').style.display = "none";
-        document.getElementById('button_delete').style.display = "none";
+        document.getElementById("action_bar").style.display = "none";
+
     }
     else {
         document.getElementById("view_table").style.display = "block";
         document.getElementById("view_form").style.display = "none";
-        document.getElementById("button_add").textContent = "Добавить";
-        document.getElementById('button_edit').style.display = "block";
-        document.getElementById('button_delete').style.display = "block";
+        document.getElementById("action_bar").style.display = "block";
     }
 }
+
+
