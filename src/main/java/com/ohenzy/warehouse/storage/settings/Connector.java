@@ -17,7 +17,8 @@ public class Connector {
         try {
             properties.load(new FileInputStream(getClass().getClassLoader().getResource("mysql.properties").getFile()));
             Class.forName("com.mysql.cj.jdbc.Driver");
-            this.connection = DriverManager.getConnection(properties.getProperty("url"),properties.getProperty("username"),properties.getProperty("password"));
+
+            this.connection = DriverManager.getConnection(properties.getProperty("url"),properties);
         } catch (IOException e) {
             e.printStackTrace();
         } catch (SQLException e){

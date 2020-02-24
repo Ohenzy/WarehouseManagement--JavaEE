@@ -15,6 +15,18 @@ public class PartnerStorage  {
        this.createTable();
     }
 
+    public void deleteAll(){
+
+        try{
+            if(tableExists())
+                connector.getConnection().createStatement().executeUpdate("drop table partners");
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+
+        createTable();
+    }
+
     public boolean deleteById(String deleteId) {
         if(deleteId.equals(""))
             return false;
@@ -34,9 +46,26 @@ public class PartnerStorage  {
         }
     }
 
+    public void edit(Partner partner) {
+        if(existsById(partner.getId())) {
+            try (PreparedStatement statement = connector.getConnection().prepareStatement("update partners set name_organisation = ?, name_director = ?, address = ?, phone = ?, email = ?, INN = ?, OGRN = ? where id = ?")) {
+                statement.setString(1, partner.getNameOrganisation());
+                statement.setString(2, partner.getNameDirector());
+                statement.setString(3, partner.getAddress());
+                statement.setString(4, partner.getPhone());
+                statement.setString(5, partner.getEmail());
+                statement.setString(6, partner.getINN());
+                statement.setString(7, partner.getOGRN());
+                statement.setInt(8, partner.getId());
+                statement.executeUpdate();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
     public void save(Partner partner) {
-        existsById(partner.getId());
-        try (PreparedStatement statement = connector.getConnection().prepareStatement("insert into partners (name_organisation, name_director, address, phone, email, INN, OGRN) values (?, ?, ?, ?, ?, ?, ?)")){
+        try (PreparedStatement statement = connector.getConnection().prepareStatement("insert partners (name_organisation, name_director, address, phone, email, INN, OGRN) values (?, ?, ?, ?, ?, ?, ?)")){
             statement.setString(1,partner.getNameOrganisation());
             statement.setString(2,partner.getNameDirector());
             statement.setString(3,partner.getAddress());
@@ -51,6 +80,7 @@ public class PartnerStorage  {
     }
 
     public Partner findById(int id) {
+
         Partner partner = null;
         try (PreparedStatement statement = connector.getConnection().prepareStatement("select * from partners where id = (?)")){
             statement.setInt(1, id);
@@ -99,7 +129,7 @@ public class PartnerStorage  {
             if( !tableExists() )
                 connector.getConnection().createStatement().executeUpdate("create table partners ( id int not null auto_increment primary key, name_organisation varchar (50)," +
                         " name_director varchar (50),address varchar(50), phone varchar(50)," +
-                        "email varchar(50), INN varchar(50),  OGRN varchar(50));");
+                        "email varchar(50), INN varchar(50),  OGRN varchar(50)) CHARACTER SET utf8;");
         } catch (SQLException e) {
             e.printStackTrace();
         }

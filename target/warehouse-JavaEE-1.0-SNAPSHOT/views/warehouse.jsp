@@ -58,7 +58,7 @@
                 <h6> <a id="button_edit" href="#" class="nav-link  disabled" > Изменить </a></h6>
             </li>
             <li class="nav-item">
-                <h6> <a id="button_delete" href="#" class="nav-link disabled"  onclick="document.getElementById('form_delete').submit(validateDelete())" > Удалить </a></h6>
+                <h6> <a id="button_delete" href="#" class="nav-link disabled"  onclick="document.getElementById('form_delete').submit(validateRowId())" > Удалить </a></h6>
             </li>
         </nav>
 </div>
@@ -98,7 +98,7 @@
             <img src="/images/homePage.png">
         </div>
     </c:if>
-    <form hidden id="form_delete" action="${pageContext.request.contextPath}/warehouse" method="post" onsubmit="validateDelete('delete')">
+    <form hidden id="form_delete" action="${pageContext.request.contextPath}/warehouse" method="post" onsubmit="validateRowId('delete')">
         <input id="delete" name="delete" type="text" value="">
     </form>
 </div>
