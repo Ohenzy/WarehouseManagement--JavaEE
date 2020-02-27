@@ -64,7 +64,7 @@ public class PartnerStorage  {
         }
     }
 
-    public void save(Partner partner) {
+    public void add(Partner partner) {
         try (PreparedStatement statement = connector.getConnection().prepareStatement("insert partners (name_organisation, name_director, address, phone, email, INN, OGRN) values (?, ?, ?, ?, ?, ?, ?)")){
             statement.setString(1,partner.getNameOrganisation());
             statement.setString(2,partner.getNameDirector());

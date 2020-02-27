@@ -17,7 +17,20 @@ public class WarehouseStorage {
         this.createTable();
     }
 
-    public void save(Warehouse warehouse){
+    public void edit (Warehouse warehouse){
+        try(PreparedStatement statement = connector.getConnection().prepareStatement("update warehouse set name = ?, address = ?, phone = ? where id = ?")){
+            statement.setString(1, warehouse.getName());
+            statement.setString(2, warehouse.getAddress());
+            statement.setString(3, warehouse.getPhone());
+            statement.setInt(4, warehouse.getId());
+            statement.executeUpdate();
+        } catch (SQLException e){
+            e.printStackTrace();
+        }
+
+    }
+
+    public void add(Warehouse warehouse){
         try(PreparedStatement statement = connector.getConnection().prepareStatement("insert into warehouse (name, address, phone) values (?,?,?)")){
             statement.setString(1,warehouse.getName());
             statement.setString(2,warehouse.getAddress());
@@ -84,4 +97,14 @@ public class WarehouseStorage {
         return tableExists;
     }
 
+    public void deleteAll() {
+        try {
+            if(this.tableExists())
+                connector.getConnection().createStatement().executeUpdate("drop table warehouse");
+            this.createTable();
+        } catch (SQLException e){
+            e.printStackTrace();
+        }
+
+    }
 }

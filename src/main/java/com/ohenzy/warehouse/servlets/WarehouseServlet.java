@@ -1,5 +1,6 @@
 package com.ohenzy.warehouse.servlets;
 
+import com.ohenzy.warehouse.models.Warehouse;
 import com.ohenzy.warehouse.storage.WarehouseStorage;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -21,6 +22,20 @@ public class WarehouseServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.setCharacterEncoding("UTF-8");
+        String action = req.getParameter("action");
+        if(!action.equals("")){
+            if(action.equals("add")){
+                warehouses.add(new Warehouse(req.getParameter("name"), req.getParameter("address"), req.getParameter("phone")));
+            } else if(action.equals("edit")){
+                warehouses.edit(new Warehouse(Integer.parseInt(req.getParameter("id_row")), req.getParameter("name"), req.getParameter("address"), req.getParameter("phone")));
+            } else if (action.equals("delete")){
+                warehouses.deleteById(req.getParameter("id_row"));
+            } else if (action.equals("delete_all")){
+                warehouses.deleteAll();
+            }
+            resp.sendRedirect("/warehouse");
+        }
 
     }
 }
