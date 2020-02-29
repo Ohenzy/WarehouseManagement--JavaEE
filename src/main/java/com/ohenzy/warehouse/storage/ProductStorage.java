@@ -16,7 +16,7 @@ public class ProductStorage  {
     }
 
     public void save(Product product){
-        try(PreparedStatement statement = connector.getConnection().prepareStatement("insert into product (name, quantity, unit) values (?,?,?) ")){
+        try(PreparedStatement statement = connector.getConnection().prepareStatement("insert into products (name, quantity, unit) values (?,?,?) ")){
             statement.setString(1, product.getName());
             statement.setInt(2, product.getQuantity());
             statement.setString(3, product.getUnit());
@@ -29,7 +29,7 @@ public class ProductStorage  {
     public boolean deleteById(String deleteId){
         if(!deleteId.equals(""))
             if(existsById(Integer.parseInt(deleteId))){
-                try (PreparedStatement statement = connector.getConnection().prepareStatement("delete from product where id=(?)")){
+                try (PreparedStatement statement = connector.getConnection().prepareStatement("delete from products where product_id=(?)")){
                     statement.setInt(1, Integer.parseInt(deleteId));
                     statement.executeUpdate();
                     return true;
@@ -43,9 +43,9 @@ public class ProductStorage  {
 
     public List<Product> findAll(){
         final List<Product> units = new ArrayList<>();
-        try(ResultSet result  = connector.getConnection().createStatement().executeQuery("select * from product")){
+        try(ResultSet result  = connector.getConnection().createStatement().executeQuery("select * from products")){
             while (result.next())
-                units.add(new Product(result.getInt("id"),result.getString("name"), result.getInt("quantity"),result.getString("unit")));
+                units.add(new Product(result.getInt("product_id"),result.getString("name"), result.getInt("quantity"),result.getString("unit")));
         }catch (SQLException e){
             e.printStackTrace();
         }
@@ -54,7 +54,7 @@ public class ProductStorage  {
 
     public boolean existsById(int id) {
         boolean exists = false;
-        try (PreparedStatement statement = connector.getConnection().prepareStatement("select * from product where id=(?)")){
+        try (PreparedStatement statement = connector.getConnection().prepareStatement("select * from products where product_id=(?)")){
             statement.setInt(1, id);
             exists = statement.executeQuery().next();
         } catch (SQLException e){
@@ -66,7 +66,7 @@ public class ProductStorage  {
     private void createTable() {
         try {
             if( !tableExists() )
-                connector.getConnection().createStatement().executeUpdate("create table product ( id int not null auto_increment primary key, name varchar (50), quantity int not null, unit varchar (50));");
+                connector.getConnection().createStatement().executeUpdate("create table products ( product_id int not null auto_increment primary key, name varchar (50), quantity int not null, unit varchar (50));");
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -74,7 +74,7 @@ public class ProductStorage  {
 
     private boolean tableExists() throws SQLException{
         boolean tableExists = false;
-        ResultSet result = connector.getConnection().createStatement().executeQuery("CHECK TABLE product");
+        ResultSet result = connector.getConnection().createStatement().executeQuery("CHECK TABLE products");
         while (result.next())
             if (result.getString("Msg_text").equals("OK"))
                 tableExists = true;

@@ -3,23 +3,17 @@ package com.ohenzy.warehouse.models;
 public class Partner {
 
     private int id;
-    private String nameOrganization;
-    private String nameDirector;
-    private String address;
-    private String phone;
-    private String email;
-    private String INN;
-    private String OGRN;
+    private final String nameOrganization;
+    private final String nameDirector;
+    private final String address;
+    private final String phone;
+    private final String email;
+    private final String INN;
+    private final String OGRN;
 
     public Partner(int id, String nameOrganization, String nameDirector, String address, String phone, String email, String INN, String OGRN) {
+        this(nameOrganization, nameDirector, address, phone, email, INN, OGRN);
         this.id = id;
-        this.nameOrganization = nameOrganization;
-        this.nameDirector = nameDirector;
-        this.address = address;
-        this.phone = phone;
-        this.email = email;
-        this.INN = INN;
-        this.OGRN = OGRN;
     }
 
     public Partner(String nameOrganization, String nameDirector, String address, String phone, String email, String INN, String OGRN) {

@@ -1,8 +1,6 @@
 package com.ohenzy.warehouse.models;
 
 
-
-
 public class Warehouse {
 
     private int id;

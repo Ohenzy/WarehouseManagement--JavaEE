@@ -35,7 +35,7 @@ public class PartnerStorage  {
             if (!existsById(id))
                 return false;
             else {
-                try (PreparedStatement statement = connector.getConnection().prepareStatement("delete from partners where id = (?)")) {
+                try (PreparedStatement statement = connector.getConnection().prepareStatement("delete from partners where partner_id = (?)")) {
                     statement.setInt(1, id);
                     statement.executeUpdate();
                 } catch (SQLException e) {
@@ -48,7 +48,7 @@ public class PartnerStorage  {
 
     public void edit(Partner partner) {
         if(existsById(partner.getId())) {
-            try (PreparedStatement statement = connector.getConnection().prepareStatement("update partners set name_organisation = ?, name_director = ?, address = ?, phone = ?, email = ?, INN = ?, OGRN = ? where id = ?")) {
+            try (PreparedStatement statement = connector.getConnection().prepareStatement("update partners set name_organisation = ?, name_director = ?, address = ?, phone = ?, email = ?, INN = ?, OGRN = ? where partner_id = ?")) {
                 statement.setString(1, partner.getNameOrganisation());
                 statement.setString(2, partner.getNameDirector());
                 statement.setString(3, partner.getAddress());
@@ -82,12 +82,12 @@ public class PartnerStorage  {
     public Partner findById(int id) {
 
         Partner partner = null;
-        try (PreparedStatement statement = connector.getConnection().prepareStatement("select * from partners where id = (?)")){
+        try (PreparedStatement statement = connector.getConnection().prepareStatement("select * from partners where partner_id = (?)")){
             statement.setInt(1, id);
             ResultSet result = statement.executeQuery();
 
             while (result.next())
-                partner = new Partner(result.getInt("id"), result.getString("name_organisation"), result.getString("name_director"),
+                partner = new Partner(result.getInt("partner_id"), result.getString("name_organisation"), result.getString("name_director"),
                         result.getString("address"), result.getString("phone"), result.getString("email"), result.getString("INN"),
                         result.getString("OGRN"));
 
@@ -99,7 +99,7 @@ public class PartnerStorage  {
 
     public boolean existsById(int id) {
         boolean exists = false;
-        try (PreparedStatement statement = connector.getConnection().prepareStatement("select * from partners where id = (?)")){
+        try (PreparedStatement statement = connector.getConnection().prepareStatement("select * from partners where partner_id = (?)")){
             statement.setInt(1, id);
             exists = statement.executeQuery().next();
         } catch (SQLException e) {
@@ -112,7 +112,7 @@ public class PartnerStorage  {
         final List<Partner> partners = new ArrayList();
         try (ResultSet result = connector.getConnection().createStatement().executeQuery("select * from partners")){
             while (result.next()) {
-                partners.add(new Partner(result.getInt("id"), result.getString("name_organisation"), result.getString("name_director"),
+                partners.add(new Partner(result.getInt("partner_id"), result.getString("name_organisation"), result.getString("name_director"),
                         result.getString("address"), result.getString("phone"), result.getString("email"), result.getString("INN"),
                         result.getString("OGRN")));
 
@@ -127,9 +127,9 @@ public class PartnerStorage  {
     private void createTable() {
         try {
             if( !tableExists() )
-                connector.getConnection().createStatement().executeUpdate("create table partners ( id int not null auto_increment primary key, name_organisation varchar (50)," +
+                connector.getConnection().createStatement().executeUpdate("create table partners ( partner_id int primary key auto_increment , name_organisation varchar (50)," +
                         " name_director varchar (50),address varchar(50), phone varchar(50)," +
-                        "email varchar(50), INN varchar(50),  OGRN varchar(50)) CHARACTER SET utf8;");
+                        "email varchar(50), INN varchar(50),  OGRN varchar(50));");
         } catch (SQLException e) {
             e.printStackTrace();
         }

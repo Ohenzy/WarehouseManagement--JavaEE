@@ -3,9 +3,9 @@ package com.ohenzy.warehouse.models;
 public class Product {
 
     private int id;
-    private String name;
-    private int quantity;
-    private String unit;
+    private final String name;
+    private final int quantity;
+    private final String unit;
 
 
     public Product(String name, int quantity, String unit) {
