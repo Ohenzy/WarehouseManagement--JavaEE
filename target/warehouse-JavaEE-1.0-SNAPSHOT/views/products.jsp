@@ -40,8 +40,7 @@
                         Операции
                     </a>
                     <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown" >
-                        <a class="dropdown-item text-white bg-dark" href="#">Приход</a>
-                        <a class="dropdown-item text-white bg-dark" href="#">Расход</a>
+                        <a class="dropdown-item text-white bg-dark" href="/invoices">Товарные накладные</a>
                     </div>
                 </li>
                 <li class="nav-item">

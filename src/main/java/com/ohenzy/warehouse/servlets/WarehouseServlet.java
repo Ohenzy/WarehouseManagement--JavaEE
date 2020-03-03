@@ -34,8 +34,7 @@ public class WarehouseServlet extends HttpServlet {
             } else if (action.equals("delete_all")){
                 warehouses.deleteAll();
             }
-            resp.sendRedirect("/warehouse");
         }
-
+        resp.sendRedirect("/warehouse");
     }
 }

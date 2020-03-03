@@ -1,5 +1,6 @@
 package com.ohenzy.warehouse.models;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -32,12 +33,23 @@ public class Invoice {
         return date;
     }
 
+    public String getFormatDate() {
+        return new SimpleDateFormat("dd.MM.yy.").format(date);
+    }
+
     public String getType() {
         return type;
     }
 
     public Partner getPartner() {
         return partner;
+    }
+
+    public int getSum(){
+        int sum = 0;
+        for(InvoiceProduct product : products)
+            sum += product.getPrice() * product.getQuantity();
+        return sum;
     }
 
     public List<InvoiceProduct> getProducts() {

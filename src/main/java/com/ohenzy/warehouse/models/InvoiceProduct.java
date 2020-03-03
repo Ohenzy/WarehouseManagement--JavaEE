@@ -3,26 +3,26 @@ package com.ohenzy.warehouse.models;
 public class InvoiceProduct {
 
     private int id;
+    private int invoiceId;
     private final String name;
     private final int quantity;
     private final String unit;
     private final int price;
     private final Warehouse warehouse;
-    private final int invoiceId;
 
 
 
-    public InvoiceProduct(String name, int quantity, String unit, int price, Warehouse warehouse, int invoiceId) {
+    public InvoiceProduct(String name, int quantity, String unit, int price, Warehouse warehouse) {
         this.name = name;
         this.quantity = quantity;
         this.unit = unit;
         this.price = price;
         this.warehouse = warehouse;
-        this.invoiceId = invoiceId;
     }
 
-    public InvoiceProduct(int id, String name, int quantity, String unit, int price, Warehouse warehouse, int invoiceId) {
-        this(name,quantity,unit, price, warehouse, invoiceId);
+    public InvoiceProduct(int id, int invoiceId, String name, int quantity, String unit, int price, Warehouse warehouse ) {
+        this(name,quantity,unit, price, warehouse);
+        this.invoiceId = invoiceId;
         this.id = id;
     }
 
@@ -53,7 +53,5 @@ public class InvoiceProduct {
     public int getInvoiceId(){
         return invoiceId;
     }
-
-
 
 }

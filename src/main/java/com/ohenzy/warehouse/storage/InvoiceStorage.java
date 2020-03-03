@@ -2,13 +2,12 @@ package com.ohenzy.warehouse.storage;
 
 import com.ohenzy.warehouse.models.Invoice;
 import com.ohenzy.warehouse.models.InvoiceProduct;
-import com.ohenzy.warehouse.models.Partner;
-import com.ohenzy.warehouse.models.Warehouse;
 import com.ohenzy.warehouse.storage.settings.Connector;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -16,22 +15,9 @@ import java.util.List;
 
 public class InvoiceStorage {
 
+
     private final Connector connector = Connector.getInstance();
     private final InvoiceProductStorage products;
-
-    public static void main(String[] args) {
-        InvoiceStorage invoices = new InvoiceStorage();
-        List<InvoiceProduct> products = new ArrayList<>();
-        products.add(new InvoiceProduct( "name", 54, "unit",  1, new Warehouse(0, "нет", "нет", "нет") ,  0));
-
-//        product.add()
-//        invoices.add( new Invoice(new  Date(), "type",new Partner(),  products) )
-
-        for(Invoice invoice : invoices.findAll()){
-
-
-        }
-    }
 
     public InvoiceStorage(){
         products = new InvoiceProductStorage();
@@ -39,8 +25,8 @@ public class InvoiceStorage {
     }
 
     private void createTable() {
-        try {
-            if(!existsTable())
+        if(!existsTable())
+            try {
                 connector.getConnection().createStatement().executeUpdate(
                         "create table invoices (" +
                                 "invoice_id int primary key auto_increment, " +
@@ -49,18 +35,40 @@ public class InvoiceStorage {
                                 "partner_id int not null, " +
                                 "FOREIGN KEY (partner_id) REFERENCES partners(partner_id));"
                 );
-        }catch (SQLException e){
-            e.printStackTrace();
-        }
+            }catch (SQLException e){
+                e.printStackTrace();
+            }
     }
 
-    private void add(Invoice invoice){
-        try (PreparedStatement statement = connector.getConnection().prepareStatement("insert invoices (date, type, partner_id ) values (?, ?, ?);")) {
+    public boolean deleteById(String invoiceId){
+        boolean delete = false;
+        if(!invoiceId.equals("")){
+            int id = Integer.parseInt(invoiceId);
+            if(products.deleteAllByInvoiceId(id)){
+                try (PreparedStatement statement = connector.getConnection().prepareStatement("delete from invoices where invoice_id = ?")) {
+                    statement.setInt(1, id);
+                    statement.executeUpdate();
+                } catch ( SQLException e ){
+                    e.printStackTrace();
+                    return false;
+                }
+            }
+            delete = true;
+        }
+        return delete;
+    }
+
+    public void add(Invoice invoice){
+        try (PreparedStatement statement = connector.getConnection().prepareStatement("insert invoices (date, type, partner_id ) values (?, ?, ?)", Statement.RETURN_GENERATED_KEYS)) {
             statement.setLong(1, new Date().getTime());
             statement.setString(2, invoice.getType());
             statement.setInt(3, invoice.getPartner().getId());
             statement.executeUpdate();
-            products.addAll(invoice.getProducts());
+            ResultSet result = statement.getGeneratedKeys();
+            int invoiceId = 0;
+            while (result.next())
+                invoiceId = result.getInt(1);
+            products.addAll(invoice.getProducts(), invoiceId);
         } catch (SQLException e){
             e.printStackTrace();
         }
@@ -80,7 +88,7 @@ public class InvoiceStorage {
         return tableExists;
     }
 
-    private List<Invoice> findAll(){
+    public List<Invoice> findAll(){
         final List<Invoice> invoices = new ArrayList<>();
         try (ResultSet result = connector.getConnection().createStatement().executeQuery("select * from invoices;")){
             while (result.next())
@@ -89,7 +97,7 @@ public class InvoiceStorage {
                         new Date(result.getLong("date")),
                         result.getString("type"),
                         new PartnerStorage().findById(result.getInt("partner_id")),
-                        products.findAllByIdInvoice(result.getInt("invoice_id")))
+                        products.findAllByInvoiceId(result.getInt("invoice_id")))
                 );
         } catch (SQLException e){
             e.printStackTrace();
@@ -97,11 +105,18 @@ public class InvoiceStorage {
         return invoices;
     }
 
+    public void deleteAll() {
+        try {
+            if(existsTable())
+                connector.getConnection().createStatement().executeUpdate("drop table invoice_products, invoices;");
+            this.createTable();
+            products.createTable();
+        } catch (SQLException e){
+            e.printStackTrace();
+        }
 
 
-
-
-
+    }
 
 
     private class InvoiceProductStorage {
@@ -110,35 +125,49 @@ public class InvoiceStorage {
             this.createTable();
         }
 
-        public void addAll(final List<InvoiceProduct> products){
+
+        public boolean deleteAllByInvoiceId(int invoiceId){
+            try (PreparedStatement statement = connector.getConnection().prepareStatement("delete from invoice_products where invoice_id = ?")) {
+                statement.setInt(1, invoiceId);
+                statement.executeUpdate();
+            } catch ( SQLException e ){
+                e.printStackTrace();
+                return false;
+            }
+            return true;
+        }
+
+        public void addAll(final List<InvoiceProduct> products, int invoiceId){
             for(InvoiceProduct product : products){
-                try (PreparedStatement statement = connector.getConnection().prepareStatement("insert invoice_products (name, quantity, unit, price, warehouse_id, invoice_id) valuses (?, ?, ?, ?, ?, ?)")){
+                try (PreparedStatement statement = connector.getConnection().prepareStatement("insert invoice_products (name, quantity, unit, price, warehouse_id, invoice_id) values (?, ?, ?, ?, ?, ?)")){
                     statement.setString(1, product.getName());
                     statement.setInt(2, product.getQuantity());
                     statement.setString(3, product.getUnit());
                     statement.setInt(4, product.getPrice());
                     statement.setInt(5, product.getWarehouse().getId());
-                    statement.setInt(6, product.getInvoiceId());
+                    statement.setInt(6, invoiceId);
                     statement.executeUpdate();
                 } catch (SQLException e){
                     e.printStackTrace();
                 }
+
             }
         }
 
-        public List<InvoiceProduct> findAllByIdInvoice(int invoice_id){
+        public List<InvoiceProduct> findAllByInvoiceId(int invoice_id){
             final List<InvoiceProduct> products = new ArrayList<>();
             try (PreparedStatement statement = connector.getConnection().prepareStatement("select * from invoice_products where invoice_id = ?")){
                 statement.setInt(1, invoice_id);
                 ResultSet result = statement.executeQuery();
                 while (result.next())
-                    products.add(new InvoiceProduct(result.getInt("invoice_product_ic"),
+                    products.add(new InvoiceProduct(
+                            result.getInt("invoice_product_ic"),
+                            result.getInt("invoice_id"),
                             result.getString("name"),
                             result.getInt("quantity"),
                             result.getString("unit"),
                             result.getInt("price"),
-                            new WarehouseStorage().findById(result.getInt("warehouse_id")),
-                            result.getInt("invoice_id")
+                            new WarehouseStorage().findById(result.getInt("warehouse_id"))
                     ));
 
             } catch (SQLException e){
@@ -160,8 +189,9 @@ public class InvoiceStorage {
                                     "price int," +
                                     "warehouse_id int," +
                                     "invoice_id int," +
-                                    "foreign key (warehouse_id) references warehouses (warehouse_id)" +
-                                    "foreign key (invoice_id) references invoices (invoice_id))");
+                                    "foreign key (warehouse_id) references warehouses (warehouse_id)," +
+                                    "foreign key (invoice_id) references invoices (invoice_id))"
+                    );
                 } catch (SQLException e){
                     e.printStackTrace();
                 }
