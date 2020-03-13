@@ -4,7 +4,7 @@ public class Product {
 
     private int id;
     private final String name;
-    private final int quantity;
+    private int quantity;
     private final String unit;
 
 
@@ -33,5 +33,9 @@ public class Product {
 
     public String getUnit() {
         return unit;
+    }
+
+    public void setQuantity(int quantity){
+        this.quantity = quantity;
     }
 }

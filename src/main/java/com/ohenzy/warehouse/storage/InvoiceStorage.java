@@ -31,7 +31,7 @@ public class InvoiceStorage {
                         "create table invoices (" +
                                 "invoice_id int primary key auto_increment, " +
                                 "date bigint, " +
-                                "type varchar(15), " +
+                                "type varchar(10), " +
                                 "partner_id int not null, " +
                                 "FOREIGN KEY (partner_id) REFERENCES partners(partner_id));"
                 );
@@ -60,7 +60,7 @@ public class InvoiceStorage {
 
     public void add(Invoice invoice){
         try (PreparedStatement statement = connector.getConnection().prepareStatement("insert invoices (date, type, partner_id ) values (?, ?, ?)", Statement.RETURN_GENERATED_KEYS)) {
-            statement.setLong(1, new Date().getTime());
+            statement.setLong(1, invoice.getDate().getTime());
             statement.setString(2, invoice.getType());
             statement.setInt(3, invoice.getPartner().getId());
             statement.executeUpdate();

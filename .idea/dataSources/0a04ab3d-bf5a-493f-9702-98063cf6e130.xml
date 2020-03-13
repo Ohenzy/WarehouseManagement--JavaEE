@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dataSource name="jdbc:mysql://127.0.0.1:3306/storagesql?serverTimezone=Europe/Moscow&amp;useSSL=false">
+<dataSource name="MySQL - jdbc:mysql://127.0.0.1:3306/storagesql?serverTimezone=Europe/Moscow&amp;useSSL=false">
   <database-model serializer="dbm" dbms="MYSQL" family-id="MYSQL" format-version="4.17">
     <root id="1">
       <ServerVersion>8.0.19</ServerVersion>
@@ -1187,7 +1187,7 @@
     </column>
     <column id="297" parent="279" name="type">
       <Position>3</Position>
-      <DataType>varchar(15)|0s</DataType>
+      <DataType>varchar(10)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="298" parent="279" name="partner_id">

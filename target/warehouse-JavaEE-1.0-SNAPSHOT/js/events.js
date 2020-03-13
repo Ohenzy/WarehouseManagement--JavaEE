@@ -50,5 +50,3 @@ function swapForm(action) {
         document.getElementById("action_bar").style.display = "block";
     }
 }
-
-

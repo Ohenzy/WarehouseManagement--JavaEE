@@ -67,7 +67,7 @@ public class WarehouseStorage {
     }
 
     public List<Warehouse> findAll(){
-        List<Warehouse> warehouses = new ArrayList<>();
+        final List<Warehouse> warehouses = new ArrayList<>();
         try ( ResultSet result = connector.getConnection().prepareStatement("select * from warehouses").executeQuery() ){
             while (result.next())
                 warehouses.add(new Warehouse(result.getInt("warehouse_id"), result.getString("name"), result.getString("address"), result.getString("phone")));
