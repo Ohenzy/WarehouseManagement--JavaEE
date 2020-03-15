@@ -22,7 +22,6 @@ public class JsonParser {
 
 
     public JsonParser(String jsonString) {
-
         JSONObject jsonObject = null;
         try {
             jsonObject = (JSONObject) new JSONParser().parse(jsonString);
@@ -41,16 +40,14 @@ public class JsonParser {
         List<Product> productList = new LinkedList<>();
 
         for(int i = 0;i<nameProductList.size();i++) {
-            productList.add(new Product(
+            productList.add( new Product(
                     nameProductList.get(i).toString(),
                     Integer.parseInt(quantityList.get(i).toString()),
-                    unitList.get(i).toString()
-            ));
+                    unitList.get(i).toString()) );
         }
         if(typeInvoice.equals("расход"))
             for(Product product : productList)
                 product.setQuantity(product.getQuantity() * -1);
-
         return productList;
     }
 

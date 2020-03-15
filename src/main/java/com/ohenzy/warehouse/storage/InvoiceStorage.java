@@ -114,8 +114,6 @@ public class InvoiceStorage {
         } catch (SQLException e){
             e.printStackTrace();
         }
-
-
     }
 
 

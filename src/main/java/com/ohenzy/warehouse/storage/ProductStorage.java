@@ -11,15 +11,7 @@ import java.util.List;
 
 public class ProductStorage  {
 
-    public static void main(String[] args) {
-        ProductStorage storage = new ProductStorage();
-        storage.save(new Product("имя", 1, "шт"));
-        storage.save(new Product("имя", 100, "кг"));
-        storage.save(new Product("имя", 9, "шт"));
-        
 
-
-    }
 
 
     private final Connector connector = Connector.getInstance();
@@ -28,36 +20,23 @@ public class ProductStorage  {
         this.createTable();
     }
 
-    public void save(Product product){
-        try(PreparedStatement statement = connector.getConnection().prepareStatement("select * from products where name = (?) and unit = (?);")) {
-            statement.setString(1,product.getName());
-            statement.setString(2,product.getUnit());
-            ResultSet result = statement.executeQuery();
-            if (result.next()){
-                int quantity = result.getInt("quantity") + product.getQuantity();
-                if(quantity > 0)
-                    statement.execute("update products set quantity = " + quantity);
-                if(quantity == 0)
-                    statement.execute("delete from products where product_id = " + result.getInt("product_id"));
-            } else
-                statement.execute("insert into products (name, quantity, unit) values ('" + product.getName() + "', " + product.getQuantity() + ", '" + product.getUnit() +"');");
-
-
-
-
-        } catch (SQLException e){
-            e.printStackTrace();
-        }
-
-
-//        try(PreparedStatement statement = connector.getConnection().prepareStatement("insert into products (name, quantity, unit) values (?,?,?) ")){
-//            statement.setString(1, product.getName());
-//            statement.setInt(2, product.getQuantity());
-//            statement.setString(3, product.getUnit());
-//            statement.executeUpdate();
-//        }catch (SQLException e){
-//            e.printStackTrace();
-//        }
+    public void saveAll(List<Product> products){
+        for (Product product : products)
+            try(PreparedStatement statement = connector.getConnection().prepareStatement("select * from products where name = (?) and unit = (?);")) {
+                statement.setString(1,product.getName());
+                statement.setString(2,product.getUnit());
+                ResultSet result = statement.executeQuery();
+                if (result.next()){
+                    int quantity = result.getInt("quantity") + product.getQuantity();
+                    if (quantity > 0)
+                        statement.execute("update products set quantity = " + quantity +" where name ='"+ product.getName() +"' and unit = '" + product.getUnit() +"';");
+                    else if (quantity == 0)
+                        statement.execute("delete from products where product_id = " + result.getInt("product_id"));
+                } else
+                    statement.execute("insert into products (name, quantity, unit) values ('" + product.getName() + "', " + product.getQuantity() + ", '" + product.getUnit() +"');");
+            } catch (SQLException e){
+                e.printStackTrace();
+            }
     }
 
     public boolean deleteById(String deleteId){

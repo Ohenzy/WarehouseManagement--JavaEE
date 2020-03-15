@@ -8,11 +8,15 @@
             background: #fff8a1;
         }
         .dark_text{
-            /*color: #343a40;*/
             color: #404d56;
             margin-left : 5px;
         }
-        neces{}
+        .move_left{
+            min-width: 30%;
+            margin-left: 2%;
+            float: left;
+        }
+
     </style>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" >
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
@@ -107,70 +111,99 @@
         <input hidden id="action" name="action" type="text" >
         <input hidden id="json_products" name="json_products" type="text">
     </form>
-<%--------------------------------------------------------------------------------------------------------------------%>
 
-        <div class="form-row" >
-            <div class="form-group col-md-4">
-                <label  class="dark_text " style="font-size: medium"  > Наименование товара </label>
-                <input id="nameProduct" class="form-control product_necessarily" name="name_product" placeholder="Введите наименование товара" >
-            </div>
-            <div class="form-group col-md-2">
-                <label class="dark_text product_necessarily" style="font-size: medium"> Склад </label>
-                <select id="warehouse" class="form-control " name="warehouse" >
-                    <c:if test="${!warehouses.isEmpty()}">
-                        <c:forEach var="warehouse" items="${warehouses}">
-                            <option value="${warehouse.getId()}">${warehouse.getName()}</option>
-                        </c:forEach>
-                    </c:if>
-                </select>
-            </div>
-            <div class="form-group col-md-2">
-                <label  class="dark_text " style="font-size: medium"  > Количество  </label>
-                <input id="quantity" class="form-control product_necessarily" name="quantity"  >
-            </div>
-            <div class="form-group col-md-2">
-                <label  class="dark_text " style="font-size: medium"  > Ед. измерения  </label>
-                <input id="unit" class="form-control product_necessarily" name="unit"  >
-            </div>
-            <div class="form-group col-md-2">
-                <label  class="dark_text " style="font-size: medium"  > Стоимость </label>
-                <input id="price" class="form-control product_necessarily" name="price"  >
-            </div>
+
+    <div class="form-row" >
+        <div class="form-group col-md-4">
+            <label  class="dark_text " style="font-size: medium"  > Наименование товара </label>
+            <input id="nameProduct" class="form-control product_necessarily" name="name_product" placeholder="Введите наименование товара" >
         </div>
+        <div class="form-group col-md-2">
+            <label class="dark_text product_necessarily" style="font-size: medium"> Склад </label>
+            <select id="warehouse" class="form-control " name="warehouse" >
+                <c:if test="${!warehouses.isEmpty()}">
+                    <c:forEach var="warehouse" items="${warehouses}">
+                        <option value="${warehouse.getId()}">${warehouse.getName()}</option>
+                    </c:forEach>
+                </c:if>
+            </select>
+        </div>
+        <div class="form-group col-md-2">
+            <label  class="dark_text " style="font-size: medium"  > Количество  </label>
+            <input id="quantity" class="form-control product_necessarily" name="quantity"  >
+        </div>
+        <div class="form-group col-md-2">
+            <label  class="dark_text " style="font-size: medium"  > Ед. измерения  </label>
+            <input id="unit" class="form-control product_necessarily" name="unit"  >
+        </div>
+        <div class="form-group col-md-2">
+            <label  class="dark_text " style="font-size: medium"  > Стоимость </label>
+            <input id="price" class="form-control product_necessarily" name="price"  >
+        </div>
+    </div>
     <div style="text-align: right">
         <button class="btn btn-dark" onclick="addProduct()"> Добавить товар </button>
     </div>
     <div id="table_products" style="text-align: center; margin-top: 3%"></div>
 </div>
-<%--------------------------------------------------------------------------------------------------------------------%>
 
-<div id="view_table" style="display: block" >
+<div id="view_table" style="display: block; padding: 0px" >
     <c:if test="${!invoices.isEmpty()}">
-        <div  class="container text-center"  style="margin-top: 3%;">
-            <h3 style="text-align: left; margin-bottom: 2%;color: #343a40; padding-bottom: 2%"> Товарные накладные </h3>
-            <table class="table table-hover shadow">
-                <caption> записей в базе ${invoices.size()}</caption>
-                <thead class="thead-dark " >
-                <tr>
-                    <th> Дата </th>
-                    <th> Тип операции </th>
-                    <th> Партнер </th>
-                    <th> Общая сумма </th>
+    <div id="view_invoice" class="container" style="margin-top: 3%;">
+        <h3 style="text-align: left; margin-bottom: 2%;color: #343a40; padding-bottom: 2%"> Товарные накладные </h3>
+        <table class="table table-hover shadow">
+            <caption> записей в базе ${invoices.size()}</caption>
+            <thead class="thead-dark " >
+            <tr>
+                <th> Дата </th>
+                <th> Тип операции </th>
+                <th> Контрагент </th>
+            </tr>
+            </thead>
+            <tbody>
+            <c:forEach var="invoice" items="${invoices}">
+                <tr onclick="selectInvoice(this)" id="${invoice.getId()}">
+                    <td>${invoice.getFormatDate()}</td>
+                    <td>${invoice.getType()}</td>
+                    <td>${invoice.getPartner().getNameOrganisation()}</td>
                 </tr>
-                </thead>
-                <tbody>
-                <c:forEach var="invoice" items="${invoices}">
-                    <tr onclick="selectRow(this)" id="${invoice.getId()}">
-                        <td>${invoice.getFormatDate()}</td>
-                        <td>${invoice.getType()}</td>
-                        <td>${invoice.getPartner().getNameOrganisation()}</td>
-                        <td>${invoice.getSum()}</td>
-                    </tr>
-                </c:forEach>
-                </tbody>
-            </table>
+            </c:forEach>
+            </tbody>
+        </table>
         </div>
+
+        <c:forEach var="invoice" items="${invoices}">
+            <div id="products_${invoice.getId()}" class="container productList"  style="margin-top: 2.5%; float: right; margin-right: 2%; display: none" >
+                <h3 style="text-align: left; color: #343a40; padding-bottom: 2%"> Товары </h3>
+                <table class="table table-hover shadow">
+                    <caption> записей в базе ${invoices.size()}</caption>
+                    <thead class="thead-dark " >
+                    <tr>
+                        <th> Наименование </th>
+                        <th> Склад </th>
+                        <th> Ед. измерения </th>
+                        <th> Количество </th>
+                        <th> Стоимость </th>
+                        <th> Общая сумма </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <c:forEach var="product" items="${invoice.getProducts()}">
+                        <tr >
+                            <td>${product.getName()}</td>
+                            <td>${product.getWarehouse().getName()}</td>
+                            <td>${product.getUnit()}</td>
+                            <td>${product.getQuantity()}</td>
+                            <td>${product.getPrice()}</td>
+                            <td>${product.getPrice() * product.getQuantity()}</td>
+                        </tr>
+                    </c:forEach>
+                    </tbody>
+                </table>
+            </div>
+        </c:forEach>
     </c:if>
+
     <c:if test="${invoices.isEmpty()}">
         <div class="container text-center" style="margin-top: 5%"  >
             <h2 style=";font-family: sans-serif; color: #999999;"> Здесь ничего нет </h2>

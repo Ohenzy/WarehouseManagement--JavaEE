@@ -45,13 +45,6 @@ public class Invoice {
         return partner;
     }
 
-    public int getSum(){
-        int sum = 0;
-        for(InvoiceProduct product : products)
-            sum += product.getPrice() * product.getQuantity();
-        return sum;
-    }
-
     public List<InvoiceProduct> getProducts() {
         return products;
     }

@@ -15,17 +15,19 @@ public class Connector {
 
     private Connector() {
         try {
-//            properties.load(new FileInputStream(getClass().getClassLoader().getResource("mysql.properties").getFile()));
+            properties.load(new FileInputStream(getClass().getClassLoader().getResource("mysql.properties").getFile()));
             Class.forName("com.mysql.cj.jdbc.Driver");
 
-//            this.connection = DriverManager.getConnection(properties.getProperty("url"),properties);
-            this.connection = DriverManager.getConnection(
-                    "jdbc:mysql://127.0.0.1:3306/storagesql?serverTimezone=Europe/Moscow&useSSL=false",
-                    "root",
-                    "2610");
+            this.connection = DriverManager.getConnection(properties.getProperty("url"),properties);
+//            this.connection = DriverManager.getConnection(
+//                    "jdbc:mysql://127.0.0.1:3306/storagesql?serverTimezone=Europe/Moscow&useSSL=false",
+//                    "root",
+//                    "2610");
         }  catch (SQLException e){
             e.printStackTrace();
         } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }  catch (IOException e) {
             e.printStackTrace();
         }
     }
