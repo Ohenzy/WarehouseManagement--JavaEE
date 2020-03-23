@@ -1,10 +1,14 @@
 package com.ohenzy.warehouse.servlets;
 
 import com.ohenzy.warehouse.models.Invoice;
-import com.ohenzy.warehouse.storage.InvoiceStorage;
-import com.ohenzy.warehouse.storage.PartnerStorage;
-import com.ohenzy.warehouse.storage.ProductStorage;
-import com.ohenzy.warehouse.storage.WarehouseStorage;
+import com.ohenzy.warehouse.models.Partner;
+import com.ohenzy.warehouse.models.Product;
+import com.ohenzy.warehouse.models.Warehouse;
+import com.ohenzy.warehouse.storage.Storage;
+import com.ohenzy.warehouse.storage.jdbc.InvoiceStorageJDBC;
+import com.ohenzy.warehouse.storage.jdbc.PartnerStorageJDBC;
+import com.ohenzy.warehouse.storage.jdbc.ProductStorageJDBC;
+import com.ohenzy.warehouse.storage.jdbc.WarehouseStorageJDBC;
 import com.ohenzy.warehouse.storage.util.JsonParser;
 
 import javax.servlet.ServletException;
@@ -23,10 +27,10 @@ public class InvoiceServlet extends HttpServlet {
 
     private final String htmlDateFormat = "yyyy-MM-dd";
 
-    private final InvoiceStorage invoices = new InvoiceStorage();
-    private final PartnerStorage partners = new PartnerStorage();
-    private final WarehouseStorage warehouses = new WarehouseStorage();
-    private final ProductStorage products = new ProductStorage();
+    private final Storage<Invoice> invoices = new InvoiceStorageJDBC();
+    private final Storage<Partner> partners = new PartnerStorageJDBC();
+    private final Storage<Warehouse> warehouses = new WarehouseStorageJDBC();
+    private final Storage<Product> products = new ProductStorageJDBC();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -52,15 +56,18 @@ public class InvoiceServlet extends HttpServlet {
                     e.printStackTrace();
                 }
                 JsonParser parser = new JsonParser(req.getParameter("json_products"));
-                invoices.add(new Invoice(
+                invoices.save(new Invoice(
                         date,
                         req.getParameter("type_invoice"),
                         partners.findById(Integer.parseInt(req.getParameter("partner"))),
                         parser.getInvoiceProducts())
                 );
-                products.saveAll(parser.getProducts());
-            }  else if (action.equals("delete")){
-                invoices.deleteById(req.getParameter("id_row"));
+                for (Product product : parser.getProducts())
+                    products.save(product);
+            } else if (action.equals("delete")){
+                int id = Integer.parseInt(req.getParameter("id_row"));
+                if( invoices.existsById(id))
+                    invoices.deleteById(id);
             } else if (action.equals("delete_all")){
                 invoices.deleteAll();
             }

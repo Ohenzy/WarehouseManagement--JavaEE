@@ -2,7 +2,7 @@ package com.ohenzy.warehouse.storage.util;
 
 import com.ohenzy.warehouse.models.InvoiceProduct;
 import com.ohenzy.warehouse.models.Product;
-import com.ohenzy.warehouse.storage.WarehouseStorage;
+import com.ohenzy.warehouse.storage.jdbc.WarehouseStorageJDBC;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -12,7 +12,7 @@ import java.util.List;
 
 
 public class JsonParser {
-    private final WarehouseStorage warehouses = new WarehouseStorage();
+    private final WarehouseStorageJDBC warehouses = new WarehouseStorageJDBC();
     private final JSONArray nameProductList;
     private final JSONArray warehouseList;
     private final JSONArray quantityList;

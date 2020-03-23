@@ -99,7 +99,7 @@ function writeTable(){
         table = table.concat(products.price[i]);
         table = table.concat("</td>");
         table = table.concat("<td>");
-        table = table.concat(products.price[i]  * products.quantity[i]);
+        table = table.concat(products.price[i] * products.quantity[i]);
         table = table.concat("</td></tr>");
     }
     table = table.concat("</table>");
@@ -109,6 +109,7 @@ function writeTable(){
 function validProduct() {
     let valid = false;
     if( validFormAdd() && products.nameProduct.length > 0){
+        products.typeInvoice = document.getElementById("type_invoice").value;
         document.getElementById("json_products").value = JSON.stringify(products);
         valid = true;
     }

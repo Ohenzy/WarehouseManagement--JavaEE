@@ -1,7 +1,8 @@
 package com.ohenzy.warehouse.servlets;
 
 import com.ohenzy.warehouse.models.Product;
-import com.ohenzy.warehouse.storage.ProductStorage;
+import com.ohenzy.warehouse.storage.Storage;
+import com.ohenzy.warehouse.storage.jdbc.ProductStorageJDBC;
 
 
 import javax.servlet.ServletException;
@@ -14,8 +15,7 @@ import java.io.IOException;
 @WebServlet("/products")
 public class ProductsServlet extends HttpServlet {
 
-    private final ProductStorage products = new ProductStorage();
-
+    private final Storage<Product> products = new ProductStorageJDBC();
 
 
     @Override

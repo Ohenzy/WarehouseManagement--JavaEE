@@ -8,6 +8,8 @@ public class Warehouse {
     private String address;
     private String phone;
 
+    public Warehouse(){}
+
     public Warehouse(int id,String name, String address, String phone){
         this(name,address,phone);
         this.id = id;
@@ -16,6 +18,22 @@ public class Warehouse {
     public Warehouse(String name, String address, String phone) {
         this.name = name;
         this.address = address;
+        this.phone = phone;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 

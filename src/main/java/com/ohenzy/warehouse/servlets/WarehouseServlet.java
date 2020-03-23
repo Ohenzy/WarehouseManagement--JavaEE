@@ -1,7 +1,9 @@
 package com.ohenzy.warehouse.servlets;
 
 import com.ohenzy.warehouse.models.Warehouse;
-import com.ohenzy.warehouse.storage.WarehouseStorage;
+import com.ohenzy.warehouse.storage.Storage;
+import com.ohenzy.warehouse.storage.hibernate.WarehouseStorageHibernate;
+import com.ohenzy.warehouse.storage.jdbc.WarehouseStorageJDBC;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -12,7 +14,7 @@ import java.io.IOException;
 @WebServlet("/warehouse")
 public class WarehouseServlet extends HttpServlet {
 
-    private final WarehouseStorage warehouses = new WarehouseStorage();
+    private final Storage<Warehouse> warehouses = new WarehouseStorageHibernate();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -26,11 +28,11 @@ public class WarehouseServlet extends HttpServlet {
         String action = req.getParameter("action");
         if(!action.equals("")){
             if(action.equals("add")){
-                warehouses.add(new Warehouse(req.getParameter("name"), req.getParameter("address"), req.getParameter("phone")));
+                warehouses.save(new Warehouse(req.getParameter("name"), req.getParameter("address"), req.getParameter("phone")));
             } else if(action.equals("edit")){
-                warehouses.edit(new Warehouse(Integer.parseInt(req.getParameter("id_row")), req.getParameter("name"), req.getParameter("address"), req.getParameter("phone")));
+                warehouses.save(new Warehouse(Integer.parseInt(req.getParameter("id_row")), req.getParameter("name"), req.getParameter("address"), req.getParameter("phone")));
             } else if (action.equals("delete")){
-                warehouses.deleteById(req.getParameter("id_row"));
+                warehouses.deleteById(Integer.parseInt(req.getParameter("id_row")));
             } else if (action.equals("delete_all")){
                 warehouses.deleteAll();
             }
