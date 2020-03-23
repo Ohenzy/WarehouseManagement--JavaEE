@@ -7,54 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9b46113c-3208-4a15-9a38-ceecb007d5c3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ohenzy/warehouse/storage/Storage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ohenzy/warehouse/storage/hibernate/WarehouseStorageHibernate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ohenzy/warehouse/storage/jdbc/PartnerStorageJDBC.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/ohenzy/models/warehouse.hbm.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/0a04ab3d-bf5a-493f-9702-98063cf6e130.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/0a04ab3d-bf5a-493f-9702-98063cf6e130.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/warehouse-JavaEE.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/warehouse-JavaEE.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ohenzy/warehouse/models/Warehouse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ohenzy/warehouse/models/Warehouse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ohenzy/warehouse/servlets/InvoiceServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ohenzy/warehouse/servlets/InvoiceServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ohenzy/warehouse/servlets/PartnersServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ohenzy/warehouse/servlets/PartnersServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ohenzy/warehouse/servlets/ProductsServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ohenzy/warehouse/servlets/ProductsServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ohenzy/warehouse/servlets/WarehouseServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ohenzy/warehouse/servlets/WarehouseServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ohenzy/warehouse/storage/InvoiceStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ohenzy/warehouse/storage/jdbc/InvoiceStorageJDBC.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ohenzy/warehouse/storage/PartnerStorage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ohenzy/warehouse/storage/ProductStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ohenzy/warehouse/storage/jdbc/ProductStorageJDBC.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ohenzy/warehouse/storage/WarehouseStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ohenzy/warehouse/storage/jdbc/WarehouseStorageJDBC.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ohenzy/warehouse/storage/settings/Connector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ohenzy/warehouse/storage/util/ConnectorJDBC.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ohenzy/warehouse/storage/util/JsonParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ohenzy/warehouse/storage/util/JsonParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mysql.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/invoiceValid.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/invoiceValid.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ohenzy/warehouse/models/Warehouse.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ohenzy/warehouse/models/Warehouse.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ohenzy/warehouse/servlets/InvoiceServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ohenzy/warehouse/servlets/InvoiceServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ohenzy/warehouse/servlets/PartnersServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ohenzy/warehouse/servlets/PartnersServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ohenzy/warehouse/servlets/ProductsServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ohenzy/warehouse/servlets/ProductsServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ohenzy/warehouse/servlets/WarehouseServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ohenzy/warehouse/servlets/WarehouseServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ohenzy/warehouse/storage/InvoiceStorage$InvoiceProductStorage.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ohenzy/warehouse/storage/InvoiceStorage.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ohenzy/warehouse/storage/PartnerStorage.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ohenzy/warehouse/storage/ProductStorage.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ohenzy/warehouse/storage/WarehouseStorage.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ohenzy/warehouse/storage/settings/Connector.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ohenzy/warehouse/storage/util/JsonParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ohenzy/warehouse/storage/util/JsonParser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/warehouse-JavaEE-1.0-SNAPSHOT/WEB-INF/classes/com/ohenzy/warehouse/models/Warehouse.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/warehouse-JavaEE-1.0-SNAPSHOT/WEB-INF/classes/com/ohenzy/warehouse/models/Warehouse.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/warehouse-JavaEE-1.0-SNAPSHOT/WEB-INF/classes/com/ohenzy/warehouse/servlets/InvoiceServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/warehouse-JavaEE-1.0-SNAPSHOT/WEB-INF/classes/com/ohenzy/warehouse/servlets/InvoiceServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/warehouse-JavaEE-1.0-SNAPSHOT/WEB-INF/classes/com/ohenzy/warehouse/servlets/PartnersServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/warehouse-JavaEE-1.0-SNAPSHOT/WEB-INF/classes/com/ohenzy/warehouse/servlets/PartnersServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/warehouse-JavaEE-1.0-SNAPSHOT/WEB-INF/classes/com/ohenzy/warehouse/servlets/ProductsServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/warehouse-JavaEE-1.0-SNAPSHOT/WEB-INF/classes/com/ohenzy/warehouse/servlets/ProductsServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/warehouse-JavaEE-1.0-SNAPSHOT/WEB-INF/classes/com/ohenzy/warehouse/servlets/WarehouseServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/warehouse-JavaEE-1.0-SNAPSHOT/WEB-INF/classes/com/ohenzy/warehouse/servlets/WarehouseServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/warehouse-JavaEE-1.0-SNAPSHOT/WEB-INF/classes/com/ohenzy/warehouse/storage/InvoiceStorage$InvoiceProductStorage.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/warehouse-JavaEE-1.0-SNAPSHOT/WEB-INF/classes/com/ohenzy/warehouse/storage/InvoiceStorage.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/warehouse-JavaEE-1.0-SNAPSHOT/WEB-INF/classes/com/ohenzy/warehouse/storage/PartnerStorage.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/warehouse-JavaEE-1.0-SNAPSHOT/WEB-INF/classes/com/ohenzy/warehouse/storage/ProductStorage.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/warehouse-JavaEE-1.0-SNAPSHOT/WEB-INF/classes/com/ohenzy/warehouse/storage/WarehouseStorage.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/warehouse-JavaEE-1.0-SNAPSHOT/WEB-INF/classes/com/ohenzy/warehouse/storage/settings/Connector.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/warehouse-JavaEE-1.0-SNAPSHOT/WEB-INF/classes/com/ohenzy/warehouse/storage/util/JsonParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/warehouse-JavaEE-1.0-SNAPSHOT/WEB-INF/classes/com/ohenzy/warehouse/storage/util/JsonParser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/warehouse-JavaEE-1.0-SNAPSHOT/js/invoiceValid.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/warehouse-JavaEE-1.0-SNAPSHOT/js/invoiceValid.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ohenzy/warehouse/storage/util/ConnectorJDBC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ohenzy/warehouse/storage/util/ConnectorJDBC.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -345,7 +298,7 @@
       <workItem from="1584803010524" duration="1008000" />
       <workItem from="1584811732385" duration="93000" />
       <workItem from="1584811875549" duration="81000" />
-      <workItem from="1585003275869" duration="267000" />
+      <workItem from="1585003275869" duration="578000" />
     </task>
     <servers />
   </component>

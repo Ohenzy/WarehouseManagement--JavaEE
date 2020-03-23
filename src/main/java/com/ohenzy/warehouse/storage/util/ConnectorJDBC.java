@@ -16,7 +16,7 @@ public class ConnectorJDBC {
 
     private ConnectorJDBC() {
         try {
-            properties.load(new FileInputStream(getClass().getClassLoader().getResource("config.properties").getFile()))
+            properties.load(new FileInputStream(getClass().getClassLoader().getResource("config.properties").getFile()));
             Class.forName("org.postgresql.Driver");
             this.connection = DriverManager.getConnection(properties.getProperty("url"),properties);
 
